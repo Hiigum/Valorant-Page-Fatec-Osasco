@@ -1,0 +1,500 @@
+@import url("agents.css");
+@import url("sova.css");
+@import url("phoenix.css");
+@import url("sage.css");
+@import url("jett.css");
+
+:root {
+    --fonte-principal: 'Montserrat';
+    --fonte-secundaria: 'Druk Wide Bold';
+    --branco: #FFF;
+    --preto: #000;
+    --cor-primaria: #FF4656;
+    --cor-secundaria: #1F2326;
+    --cor-terciaria: #ACACAC;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--preto);
+    background-color: var(--cor-secundaria);
+}
+
+/*=========Preloader=========*/
+
+#preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:var(--cor-secundaria); /* cor do background que vai ocupar o body */
+    z-index:999; /* z-index para jogar para frente e sobrepor tudo */
+}
+#preloader .inner {
+    position: absolute;
+    top: 50%; /* centralizar a parte interna do preload */
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+.bolas > div {
+  display: inline-block;
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin: 3px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: animarBola;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+   
+}
+.bolas > div:nth-child(1) {
+    animation-duration:1.2s ;
+    animation-delay: 0;
+}
+.bolas > div:nth-child(2) {
+    animation-duration: 1.2s ;
+    animation-delay: 0.16s;
+}
+.bolas > div:nth-child(3) {
+    animation-duration: 1.2s  ;
+    animation-delay: 0.32s;
+}
+ 
+@keyframes animarBola {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  16% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0.7;
+  }
+  33% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; 
+  } 
+}
+
+/*=========Cabeçalho=========*/
+
+.cabecalho {
+    background-color: var(--cor-secundaria);
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho__logo {
+    padding:  0 3.5rem 0 1rem;
+    margin: 1rem 1rem 1rem 0.2rem;
+    border-right: 2px solid var(--branco);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__titulo {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 1.2rem 0 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding-bottom: 0.2rem;
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.navbar__titulo:hover {
+    border-bottom: 0.5px solid var(--branco);
+}
+
+.navbar__botao {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.navbar__botao2 {
+    display: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.fechado {
+    display: none;
+}
+
+.aberto {
+    display: flex;
+}
+
+.navbar__lista {
+    display: none;
+    align-items: center;
+    gap: 1.7rem;
+    margin-left: 1rem;
+}
+
+.navbar__lista-actv {
+    display: flex;
+}
+
+.navbar__lista--link {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--branco);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/*=========rodape=========*/
+
+.rodape {
+    padding: 3rem;
+    background-color: var(--cor-secundaria);
+}
+
+/*=========Agentes Page=========*/
+
+.agente {
+    background-image:url("../img/jett/bg.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-color: var(--cor-primaria);
+    padding: 0 0 0 0;
+}
+
+.agente__bloco {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto auto;
+    margin-bottom: 0.5rem;
+}
+
+.pagina__titulo {
+    display: inline-block;
+    font-family: 'Druk Wide Bold';
+    font-size: 8vw;
+    font-weight: 500;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--branco);
+    justify-self: center;
+}
+
+.agente__conteudo {
+    background-color: var(--branco);
+    width: 51vw;
+    height: 33.4vw;
+    padding: 1rem;
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+}
+
+.agente__bloco--titulo {
+    display: inline-block;
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0.7rem 0 0 1rem;
+}
+
+.agente__bloco--lore {
+    font-family: var(--fonte-principal);
+    line-height: 120%;
+    margin: 0.7rem 1rem;
+    font-size: 13px;
+}
+
+.agente__bloco--container {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.skill__video {
+    position: absolute;
+    left: 4vw;
+    width: 30vw;
+    height: 17vw;
+}
+
+.agente__atributos {
+    margin-left: 26.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.agente__atributos--titulo {
+    font-family: var(--fonte-secundaria);
+    font-size: 1rem;
+    margin: 1.1rem 0;
+}
+
+.atributos__lista {
+    font-family: var(--fonte-secundaria);
+    font-size: 11.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.atributos__lista--items {
+    display: flex;
+    gap: 0.5em;
+}
+
+.atributo__atributo {
+    color: var(--cor-terciaria);
+}
+
+.agente__habilidades {
+    width: 53.1vw;
+    background-color: var(--cor-secundaria);
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: center;
+    margin-bottom: 3rem;
+}
+
+.agente__habilidades--lista {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 0.5rem;
+    text-align: center;
+    color: var(--branco);
+}
+
+.agentes__habilidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+}
+
+.habilidade__img--container {
+    height: 4vw;
+    width: 4vw;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+.habilidade__titulo {
+    font-family: var(--fonte-secundaria);
+    font-size: 12px;
+    margin: 1rem 0 0.5rem;
+    cursor: pointer;
+}
+
+.habilidade__desc {
+    font-size: 9px;
+    color: rgb(209, 209, 209);
+    line-height: 140%;
+}
+
+@media screen and (max-width: 1024px) {
+    .agente {
+        background-size: cover;
+    }
+
+    .agente__bloco {
+        margin-bottom: 1rem;
+        grid-template-columns: 54% 10% auto;
+    }
+
+    .pagina__titulo {
+        grid-column: span 2 ;
+    }
+    
+    .agente__conteudo {
+        width: 48vw;
+        height: 44.5vw;
+        padding: 0.6rem;
+        justify-self: end;
+        margin-bottom: 2.5rem;
+    }
+    
+    .agente__bloco--titulo {
+        font-size: 1.3rem;
+        margin: 0.7rem 0 0 1rem;
+    }
+    
+    .agente__bloco--lore {
+        line-height: 125%;
+        margin: 1rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .skill__video {
+        display: none;
+    }
+
+    .agente__atributos--titulo {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+    }
+
+    .atributos__lista {
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 0.7rem;
+        gap: 1.2rem;
+    }
+
+    .agente__atributos {
+        margin-left: 1rem;
+    }
+
+    .agente__habilidades {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: start;
+    }
+
+    .agente__habilidades {
+        background-color: var(--cor-secundaria);
+        width: 11vw;
+        height: 46.53vw;
+    }
+    
+    .agente__habilidades--lista {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        align-items: center;
+        color: var(--branco);
+        gap: 1.3rem;
+    }
+    
+    .agentes__habilidade {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0.5rem;
+    }
+
+    .habilidade__titulo {
+        font-size: 0.6rem;
+    }
+    
+    .habilidade__desc {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1629px) {
+    .agente__conteudo {
+        width: 50.5vw;
+        height: 29.2vw;
+        padding: 1.1rem;
+    }
+
+    .skill__video {
+        top: 57.66vh;
+        height: 31.5vh;
+    }
+
+    .agente__atributos {
+        margin-left: 27.5vw;
+    }
+    
+    .agente__atributos--titulo {
+        font-size: 1.15rem;
+    }
+    
+    .atributos__lista {
+        font-size: 12px;
+        gap: 1.7rem;
+    }
+
+    .agente__habilidades {
+        width: 52.7vw;
+        margin-bottom: 4rem;
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+    .agente {
+        background-size: cover;
+    }
+
+    .agente__bloco {
+        margin-bottom: 0.6rem;
+    }
+    
+    .pagina__titulo {
+        font-size: 9vw;
+    }
+    
+    .agente__conteudo {
+        width: 51vw;
+        height: 30.08vw;
+        padding: 1rem;
+    }
+    
+    .agente__bloco--titulo {
+        font-size: 2.5rem;
+        margin: 0.7rem 0 0 1rem;
+    }
+    
+    .agente__bloco--lore {
+        line-height: 125%;
+        margin: 1rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .skill__video {
+        top: 29vw;
+        left: 4.4vw;
+        width: 28.1vw;
+        height: 15.5vw;
+    }
+
+    .agente__atributos--titulo {
+        font-size: 1.6rem;
+        margin: 1.1rem 0;
+    }
+
+    .atributos__lista {
+        font-size: 0.9rem;
+        gap: 1.7rem;
+    }
+
+    .agente__atributos {
+        margin-left: 25.5vw;
+    }
+
+    .agente__habilidades {
+        width: 52.79vw;
+        margin-bottom: 8rem;
+    }
+
+    .habilidade__titulo {
+        font-size: 1rem;
+    }
+    
+    .habilidade__desc {
+        font-size: 0.65rem;
+    }
+}
